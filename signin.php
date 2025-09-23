@@ -38,3 +38,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <p style="color:red;"><?= $msg ?></p>
 </body>
 </html>
+<?php
+session_start();
