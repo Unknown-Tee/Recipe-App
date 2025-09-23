@@ -41,4 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </form>
 <p style="color:red;"><?= $msg ?></p>
 </body>
+    
 </html>
