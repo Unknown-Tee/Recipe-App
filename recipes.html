@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>African Recipe Book</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .recipes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .card-body h3 {
+      margin: 0;
+      color: #444;
+    }
+    .card-body p {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍲 African Recipe Book</h1>
+
+  <div class="recipes" id="recipeList"></div>
+
+  <script>
+    
+    const recipes = [
+      {
+        name: "Rice Biryani",
+        description: "Spiced rice dish with meat or vegetables, popular in East Africa.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Chicken_biryani.jpg"
+      },
+      {
+        name: "Ugali",
+        description: "Kenyan staple made from maize flour and water, served with greens or stew.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Ugali_and_Sukumawiki.jpg"
+      },
+      {
+        name: "Chapati",
+        description: "Soft flatbread, often eaten with beans or stew.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Chapati_in_Uganda.jpg"
+      },
+      {
+        name: "Pilau",
+        description: "Fragrant rice cooked with spices, meat, or vegetables.",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pilau.jpg"
+      }
+    ];
+
+        const recipeList = document.getElementById("recipeList");
+    recipes.forEach(recipe => {
+      recipeList.innerHTML += `
+        <div class="card">
+          <img src="${recipe.image}" alt="${recipe.name}">
+          <div class="card-body">
+            <h3>${recipe.name}</h3>
+            <p>${recipe.description}</p>
+          </div>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
